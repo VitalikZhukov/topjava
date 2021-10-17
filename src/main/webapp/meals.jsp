@@ -1,3 +1,4 @@
+<%@ page import="ru.javawebinar.topjava.util.TimeUtil" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="ru">
@@ -32,8 +33,9 @@
                 <c:set var="colorMeal" value="red"/>
             </c:if>
 
+            <jsp:useBean id="meal" type="ru.javawebinar.topjava.model.MealTo"/>
             <tr style="color: ${colorMeal}">
-                <td>${meal.dateTime}</td>
+                <td><%=TimeUtil.localDateTimeToString(meal.getDateTime())%></td>
                 <td>${meal.description}</td>
                 <td>${meal.calories}</td>
             </tr>
