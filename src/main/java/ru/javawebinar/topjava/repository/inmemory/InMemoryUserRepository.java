@@ -28,11 +28,13 @@ public class InMemoryUserRepository implements UserRepository {
     @Override
     public User save(User user) {
         log.info("save {}", user);
+        //save
         if(user.isNew()) {
             user.setId(counter.incrementAndGet());
             repository.put(user.getId(), user);
             return user;
         }
+        //update
         return repository.computeIfPresent(user.getId(), (id, oldUser) -> user);
     }
 
@@ -46,7 +48,7 @@ public class InMemoryUserRepository implements UserRepository {
     public List<User> getAll() {
         log.info("getAll");
         return repository.values().stream()
-                .sorted(Comparator.comparing(User::getId))
+                .sorted(Comparator.comparing(User::getName).thenComparing(User::getEmail))
                 .collect(Collectors.toList());
     }
 
