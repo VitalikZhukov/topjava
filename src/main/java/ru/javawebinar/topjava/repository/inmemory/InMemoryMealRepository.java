@@ -22,14 +22,6 @@ public class InMemoryMealRepository implements MealRepository {
     private final Map<Integer, Map<Integer, Meal>> repository = new ConcurrentHashMap<>();
     private final AtomicInteger counter = new AtomicInteger(0);
 
-    {
-        for (Meal meal : MealsUtil.meals) {
-            save(1, meal);
-        }
-        save(2, new Meal(LocalDateTime.of(2020, Month.JANUARY, 30, 10, 0), "Завтрак (user)", 150));
-        save(2, new Meal(LocalDateTime.of(2020, Month.JANUARY, 30, 10, 0), "Обед (user)", 200));
-    }
-
     @Override
     public Meal save(int userID, Meal meal) {
         log.info("save {} {}", userID, meal);
