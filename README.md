@@ -1,6 +1,7 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/9b58025c0f1e4e21878f65c68102f16f)](https://www.codacy.com/gh/VitalikZhukov/topjava/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=VitalikZhukov/topjava&amp;utm_campaign=Badge_Grade)
 
-https://app.travis-ci.com/VitalikZhukov/topjava.svg?branch=master
+![Codacy Badge](https://app.travis-ci.com/VitalikZhukov/topjava.svg?branch=master)
+
 
 
 Java Enterprise Online Project 
